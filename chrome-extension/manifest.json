@@ -1,0 +1,25 @@
+﻿{
+  "manifest_version": 3,
+  "name": "Dashboard Auto-Login",
+  "version": "1.3.0",
+  "description": "Auto-logs-in the monitoring dashboards (PRTG x3, Billing Portal x2, Kerio) inside the normal Chrome profile. Runs only on the six login pages.",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://192.0.2.11/public/*",
+        "https://192.0.2.11/index.htm*",
+        "https://192.0.2.12/public/*",
+        "https://192.0.2.12/index.htm*",
+        "https://192.0.2.13/public/*",
+        "https://192.0.2.13/index.htm*",
+        "http://198.51.100.21/portal/*",
+        "http://198.51.100.22/portal/*",
+        "http://198.51.100.23/portal/*",
+        "https://mail.example.com/webmail/*"
+      ],
+      "run_at": "document_idle",
+      "all_frames": false,
+      "js": ["content.js"]
+    }
+  ]
+}
